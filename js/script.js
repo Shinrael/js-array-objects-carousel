@@ -2,6 +2,7 @@ const imageContainer = document.querySelector('.image-container');
 const left = document.querySelector('.left');
 const right = document.querySelector('.right');
 
+let counter = 0;
 
 const images = [
     {
@@ -45,8 +46,40 @@ images.forEach((img, index) => {
 
     imageContainer.innerHTML += `
         <img class="image ${hiddenClass}" src="${img.url}">
-        <h1 class="${hiddenClass}">${img.title}</h1>  
-        <p class="${hiddenClass}">${img.description}</p>
+        <h1 class="title ${hiddenClass}">${img.title}</h1>  
+        <p class=" description ${hiddenClass}">${img.description}</p>
     `          
 })
 
+const allImages = document.querySelectorAll('.image');
+const allTitles = document.querySelectorAll('.title');
+const allDescriptions = document.querySelectorAll('.description');
+
+right.addEventListener('click', ()=> {
+    if (counter < allImages.length - 1) {
+
+        allImages[counter].classList.add('hidden');
+        allTitles[counter].classList.add('hidden');
+        allDescriptions[counter].classList.add('hidden');
+
+        counter++;
+
+        allImages[counter].classList.remove('hidden');
+        allTitles[counter].classList.remove('hidden');
+        allDescriptions[counter].classList.remove('hidden');
+    }
+})
+
+left.addEventListener('click', () => {
+    if (counter > 0) {
+        allImages[counter].classList.add('hidden');
+        allTitles[counter].classList.add('hidden');
+        allDescriptions[counter].classList.add('hidden');
+
+        counter--;
+
+        allImages[counter].classList.remove('hidden');
+        allTitles[counter].classList.remove('hidden');
+        allDescriptions[counter].classList.remove('hidden');
+    }
+})
