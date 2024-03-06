@@ -33,7 +33,20 @@ const images = [
     },
 ];
 
-images.forEach(img => {
-    imageContainer.innerHTML += `<img class="image hidden" src="${img.url}">`
+// Inserisco tutte le immagini dentro il container
+
+images.forEach((img, index) => {
+
+    let hiddenClass = '';
+    
+    if (index !== 0) {
+        hiddenClass = 'hidden';
+    } 
+
+    imageContainer.innerHTML += `
+        <img class="image ${hiddenClass}" src="${img.url}">
+        <h1 class="${hiddenClass}">${img.title}</h1>  
+        <p class="${hiddenClass}">${img.description}</p>
+    `          
 })
 
