@@ -1,6 +1,7 @@
 const imageContainer = document.querySelector('.image-container');
 const left = document.querySelector('.left');
 const right = document.querySelector('.right');
+const thumbContainer = document.querySelector('.card-lat');
 
 let counter = 0;
 
@@ -48,7 +49,11 @@ images.forEach((img, index) => {
         <img class="image ${hiddenClass}" src="${img.url}">
         <h1 class="title ${hiddenClass}">${img.title}</h1>  
         <p class=" description ${hiddenClass}">${img.description}</p>
-    `          
+    `
+    thumbContainer.innerHTML +=`
+    <div class="card-container">
+        <img src="${img.url}" alt="">
+    `
 })
 
 right.addEventListener('click', ()=> {
