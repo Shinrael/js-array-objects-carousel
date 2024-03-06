@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .debug{
+    border: 1px solid black;
+  }
+  
+  .main-wrapper{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .slider{
+    width: 80%;
+    height: 80%;
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .image-container{
+    height: 80%;  
+    width: 100%;
+  }
+  
+  .image-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .btn-arrow{
+    width: 40px;
+    height: 40px;
+    background-color: lightgray;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: black;
+    font-size: x-large;
+    transition: all .3s;
+    position: absolute;
+    bottom: 15%;
+    z-index: 1;
+  }
+  
+  .btn-arrow:hover{
+    background-color: gray;
+    color: red;
+    cursor: pointer;
+  }
+  
+  .btn-arrow.left{
+  left: 12%;
+  }
+  
+  .btn-arrow.right{
+  right: 12%; 
+  }
+  
+  .hidden{
+    display: none;
+  }
+  
+  .card-lat{
+    height: 20%;
+    width: 100%;
+    position: relative;
+  }
+  
+  .card-container{
+    width: 100%;
+    height: calc(100% / 5);
+    filter: brightness(40%);
+  }
+  
+  .card-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  
+  }
+  
+  .active-card{
+    border: 3px solid red;
+    filter: brightness(100%);
+  }
