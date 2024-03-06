@@ -51,35 +51,48 @@ images.forEach((img, index) => {
     `          
 })
 
-const allImages = document.querySelectorAll('.image');
-const allTitles = document.querySelectorAll('.title');
-const allDescriptions = document.querySelectorAll('.description');
-
 right.addEventListener('click', ()=> {
-    if (counter < allImages.length - 1) {
 
-        allImages[counter].classList.add('hidden');
-        allTitles[counter].classList.add('hidden');
-        allDescriptions[counter].classList.add('hidden');
+    const allImages = document.querySelectorAll('.image');
+    const allTitles = document.querySelectorAll('.title');
+    const allDescriptions = document.querySelectorAll('.description');
 
-        counter++;
+    allImages[counter].classList.add('hidden');
+    allTitles[counter].classList.add('hidden');
+    allDescriptions[counter].classList.add('hidden');
 
-        allImages[counter].classList.remove('hidden');
-        allTitles[counter].classList.remove('hidden');
-        allDescriptions[counter].classList.remove('hidden');
+    counter = (counter + 1) % allImages.length;
+
+
+    allImages[counter].classList.remove('hidden');
+    allTitles[counter].classList.remove('hidden');
+    allDescriptions[counter].classList.remove('hidden');
+    
+
+    if (counter === 0) {
+        allImages[allImages.length - 1].classList.add('hidden');
+        allTitles[allTitles.length - 1].classList.add('hidden');
+        allDescriptions[allDescriptions.length - 1].classList.add('hidden');
     }
-})
+});
+
+
 
 left.addEventListener('click', () => {
-    if (counter > 0) {
-        allImages[counter].classList.add('hidden');
-        allTitles[counter].classList.add('hidden');
-        allDescriptions[counter].classList.add('hidden');
 
-        counter--;
+    const allImages = document.querySelectorAll('.image');
+    const allTitles = document.querySelectorAll('.title');
+    const allDescriptions = document.querySelectorAll('.description');
 
-        allImages[counter].classList.remove('hidden');
-        allTitles[counter].classList.remove('hidden');
-        allDescriptions[counter].classList.remove('hidden');
-    }
+    
+    allImages[counter].classList.add('hidden');
+    allTitles[counter].classList.add('hidden');
+    allDescriptions[counter].classList.add('hidden');
+
+    counter = (counter - 1 + allImages.length) % allImages.length;
+
+    allImages[counter].classList.remove('hidden');
+    allTitles[counter].classList.remove('hidden');
+    allDescriptions[counter].classList.remove('hidden');
+    
 })
